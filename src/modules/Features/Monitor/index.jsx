@@ -14,7 +14,7 @@ const Monitor = () => {
         "https://www.linkedin.com/posts/vercel_how-nous-research-used-botid-to-block-automated-activity-7394503278987878400-_nrd",
         "https://www.linkedin.com/posts/vercel_vercel-the-anti-vendor-lock-in-cloud-vercel-activity-7393778486882050048-Ykxx",
       ],
-      updates: "Pricing for Pro plan updated to $20/month.",
+      // updates: "Pricing for Pro plan updated to $20/month.",
       linkedInUrl: "https://www.linkedin.com/company/vercel",
       websiteUrl: "https://vercel.com/",
     },
@@ -51,7 +51,6 @@ const Monitor = () => {
   const [competitors, setCompetitors] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // ✅ Moved useEffect above return and fixed axios import
   useEffect(() => {
     axios
       .get("https://your-api-url.com/competitors")
@@ -61,7 +60,7 @@ const Monitor = () => {
       })
       .catch((error) => {
         console.error("Error fetching competitors:", error);
-        setCompetitors(fallbackData); // fallback to local data
+        setCompetitors(fallbackData);
         setLoading(false);
       });
   }, []);
@@ -76,7 +75,7 @@ const Monitor = () => {
 
   return (
     <div className="monitor-container">
-      <h2>Competitors Under the Microscope 👀</h2>
+      <h2>Competitors Under the Microscope</h2>
 
       <div className="cards">
         {competitors.map((item) => (
@@ -86,19 +85,26 @@ const Monitor = () => {
             onClick={() => setSelected(item)}
           >
             <div className="card-header">
-              <h3>{item.name}</h3>
+              <div className="title-badge">
+                <h3>{item.name}</h3>
+                {item.updates && item.updates.trim() !== "" && (
+                  <span className="badge">New Update</span>
+                )}
+              </div>
               <img src={item.logo} alt={item.name} className="logo" />
             </div>
+
             <div className="card-body">
               <p>{item.description.slice(0, 130)}...</p>
             </div>
+
             <div className="card-footer">
               <a
                 href={item.websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="visit-link"
-                onClick={(e) => e.stopPropagation()} // ✅ prevents modal from opening
+                onClick={(e) => e.stopPropagation()}
               >
                 Visit Website →
               </a>
@@ -108,9 +114,18 @@ const Monitor = () => {
       </div>
 
       {selected && (
-        <div className="modal-overlay" onClick={() => setSelected(null)}>
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <h2>{selected.name}</h2>
+        <>
+          <div
+            className="drawer-overlay"
+            onClick={() => setSelected(null)}
+          ></div>
+          <div className={`drawer ${selected ? "open" : ""}`}>
+            <div className="drawer-header">
+              <h2>{selected.name}</h2>
+              <button className="close-btn" onClick={() => setSelected(null)}>
+                ✕
+              </button>
+            </div>
             <p>{selected.description}</p>
 
             <h4>Recent Posts</h4>
@@ -124,10 +139,14 @@ const Monitor = () => {
               ))}
             </ul>
 
-            <h4>Recent Updates</h4>
-            <p>{selected.updates}</p>
+            {selected?.updates && selected?.updates.trim() !== "" && (
+              <>
+                <h4>Recent Updates</h4>
+                <p>{selected.updates}</p>
+              </>
+            )}
 
-            <div className="modal-footer">
+            <div className="drawer-footer">
               <a
                 href={selected.websiteUrl}
                 target="_blank"
@@ -136,12 +155,9 @@ const Monitor = () => {
               >
                 Visit Site
               </a>
-              <button className="close-btn" onClick={() => setSelected(null)}>
-                Close
-              </button>
             </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );
