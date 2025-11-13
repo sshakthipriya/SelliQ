@@ -122,7 +122,7 @@ const Investor = () => {
       </div>
     );
   }
-  const sorted = [...data].sort((a, b) => b.score - a.score);
+  const sorted = [...investors].sort((a, b) => b.score - a.score);
   const top3 = sorted.slice(0, 3);
   const rest = sorted.slice(3);
 
