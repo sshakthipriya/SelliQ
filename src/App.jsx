@@ -3,6 +3,7 @@ import SideBar from "./components/SideBar";
 import NavBar from "./components/NavBar";
 import Investors from "./modules/Features/Investor/index";
 import Home from "./modules/Home/index";
+import Monitor from './modules/Features/Monitor/index';
 import "./App.css";
 
 function LayoutWithSidebar() {
@@ -15,7 +16,7 @@ function LayoutWithSidebar() {
           <Routes>
             <Route path="/investors" element={<Investors />} />
             {/* <Route path="/emails-sense" element={<EmailsSense />} /> */}
-            {/* <Route path="/competitors" element={<Competitors />} /> */}
+            <Route path="/competitors" element={<Monitor />} />
           </Routes>
         </main>
       </div>
