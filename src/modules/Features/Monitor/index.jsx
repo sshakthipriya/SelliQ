@@ -29,6 +29,7 @@ const Monitor = () => {
         "Feature update: Background jobs can now run longer than 15 minutes. Added support for automatic TLS renewal.",
       linkedInUrl: "https://www.linkedin.com/company/render",
       websiteUrl: "https://render.com/",
+      website_url: "https://render.com",
     },
     {
       id: 3,
@@ -36,14 +37,12 @@ const Monitor = () => {
       logo: "src/assets/stacktape_logo.jpeg",
       description:
         "Stacktape helps monitor deployments and logs in one place. It combines simplicity and scalability for developers managing multiple environments.",
-      linkedInPosts: [
-        "https://stacktape.com/blog/1",
-        "https://stacktape.com/blog/2",
-      ],
+      linkedInPosts: ["https://stacktape.com/blog/1", "https://stacktape.com/blog/2"],
       updates:
         "New feature: Real-time alert notifications via Slack. Dashboard redesigned for better usability.",
       linkedInUrl: "https://www.linkedin.com/company/stacktape",
       websiteUrl: "https://stacktape.com/",
+      website_url: "https://stacktape.com",
     },
   ];
 
@@ -72,6 +71,10 @@ const Monitor = () => {
       </div>
     );
   }
+
+  const handleRedirection = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <div className="monitor-container">
@@ -127,6 +130,7 @@ const Monitor = () => {
               </button>
             </div>
             <p>{selected.description}</p>
+
 
             <h4>Recent Posts</h4>
             <ul>
