@@ -2,8 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SideBar from "./components/SideBar";
 import NavBar from "./components/NavBar";
 import Investors from "./modules/Features/Investor/index";
-import Home from "./modules/Home/index";
 import Monitor from './modules/Features/Monitor/index';
+import Home from "./modules/Home/index";
+import EmailCurator from "./modules/Features/EmailCurator/index";
 import "./App.css";
 
 function LayoutWithSidebar() {
@@ -15,7 +16,7 @@ function LayoutWithSidebar() {
         <main style={{ flex: 1, padding: "1rem" }}>
           <Routes>
             <Route path="/investors" element={<Investors />} />
-            {/* <Route path="/emails-sense" element={<EmailsSense />} /> */}
+            <Route path="/emails-sense" element={<EmailCurator />} />
             <Route path="/competitors" element={<Monitor />} />
           </Routes>
         </main>

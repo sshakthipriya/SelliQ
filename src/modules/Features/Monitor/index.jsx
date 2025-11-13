@@ -29,6 +29,7 @@ const Monitor = () => {
         "Feature update: Background jobs can now run longer than 15 minutes. Added support for automatic TLS renewal.",
       linkedInUrl: "https://www.linkedin.com/company/render",
       websiteUrl: "https://render.com/",
+      website_url: "https://render.com",
     },
     {
       id: 3,
@@ -36,14 +37,12 @@ const Monitor = () => {
       logo: "src/assets/stacktape_logo.jpeg",
       description:
         "Stacktape helps monitor deployments and logs in one place. It combines simplicity and scalability for developers managing multiple environments.",
-      linkedInPosts: [
-        "https://stacktape.com/blog/1",
-        "https://stacktape.com/blog/2",
-      ],
+      linkedInPosts: ["https://stacktape.com/blog/1", "https://stacktape.com/blog/2"],
       updates:
         "New feature: Real-time alert notifications via Slack. Dashboard redesigned for better usability.",
       linkedInUrl: "https://www.linkedin.com/company/stacktape",
       websiteUrl: "https://stacktape.com/",
+      website_url: "https://stacktape.com",
     },
   ];
 
@@ -74,9 +73,14 @@ const Monitor = () => {
     );
   }
 
+  const handleRedirection = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div className="monitor-container">
       <h2>Competitors Under the Microscope 👀</h2>
+
 
       <div className="cards">
         {competitors.map((item) => (
@@ -113,6 +117,7 @@ const Monitor = () => {
             <h2>{selected.name}</h2>
             <p>{selected.description}</p>
 
+
             <h4>Recent Posts</h4>
             <ul>
               {selected.linkedInPosts.map((link, i) => (
@@ -123,6 +128,7 @@ const Monitor = () => {
                 </li>
               ))}
             </ul>
+
 
             <h4>Recent Updates</h4>
             <p>{selected.updates}</p>
@@ -136,9 +142,15 @@ const Monitor = () => {
               >
                 Visit Site
               </a>
-              <button className="close-btn" onClick={() => setSelected(null)}>
-                Close
+  
+            <div className="buttons">
+              <button onClick={() => handleRedirection(selected.website_url)}>
+                View Site
               </button>
+              <button className="close-btn" onClick={() => setSelected(null)}>
+                  Close
+                </button>
+            </div>
             </div>
           </div>
         </div>
