@@ -16,11 +16,13 @@ const data = [
     investor: "Investor A",
     probability: 0.7,
     reason: "Strong portfolio alignment",
+    linkedUrl: "url1"
   },
   {
     investor: "Investor B",
     probability: 0.5,
     reason: "Interested in AI startups",
+    linkedUrl: "url1"
   },
   {
     investor: "Investor C",
