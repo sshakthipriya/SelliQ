@@ -8,9 +8,9 @@ const Monitor = () => {
       name: "Vercel",
       description:
         "Vercel is a cloud platform for static sites and Serverless Functions. It enables developers to deploy websites instantly with zero configuration, integrates seamlessly with Git, and provides serverless APIs and edge functions for dynamic experiences.",
-      recentLinks: ["https://vercel.com/blog/1", "https://vercel.com/blog/2"],
+      recentLinks: ["https://www.linkedin.com/posts/vercel_how-nous-research-used-botid-to-block-automated-activity-7394503278987878400-_nrd/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADCtlOgB-McCJjdv-NQXpM2_m2HrkcGBkQU", "https://www.linkedin.com/posts/vercel_vercel-the-anti-vendor-lock-in-cloud-vercel-activity-7393778486882050048-Ykxx?utm_source=share&utm_medium=member_desktop&rcm=ACoAADCtlOgB-McCJjdv-NQXpM2_m2HrkcGBkQU"],
       updates:
-        "New feature released: Edge Caching for serverless functions. Pricing for Pro plan updated to $20/month. Integration with analytics improved for faster reporting.",
+        "Pricing for Pro plan updated to $20/month.",
     },
     {
       id: 2,

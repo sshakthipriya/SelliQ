@@ -1,9 +1,9 @@
 import "./index.scss";
 import { useNavigate } from "react-router-dom";
-
+ 
 const Home = () => {
   const navigate = useNavigate();
-
+ 
   const handleNavigationToFeatures = () => {
     navigate("/features");
   };
@@ -14,12 +14,13 @@ const Home = () => {
         <p>
           Supercharge your sales team <span>with AI</span>
         </p>
+      </div>
         <button className="get-started" onClick={handleNavigationToFeatures}>
           Get Started{" "}
         </button>
-      </div>
     </div>
   );
 };
-
+ 
 export default Home;
+ 
