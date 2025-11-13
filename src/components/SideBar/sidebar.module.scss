@@ -23,7 +23,7 @@
   ul {
     list-style: none;
     text-decoration: none;
-    padding: 0;
+    padding: 0.7rem 0;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -36,6 +36,13 @@
       justify-content: space-between;
       width: 100%;
     }
+.active {
+  background-color: #fffdf8;
+  border-radius: 1rem;
+  padding: 0.7rem !important;
+  color: #ff7a00 ;
+}
+
 
     .listItem {
       display: flex;
@@ -55,12 +62,13 @@
 }
 
 .help {
-  margin-top: 23rem;
+  margin-top: 20rem;
   display: flex;
   justify-content: center;
   width: 100%;
   background-color: #ff9f43;
   padding: 1rem;
+  margin-bottom: 1rem;
   border-radius: 1rem;
   cursor: pointer;
   color: black;

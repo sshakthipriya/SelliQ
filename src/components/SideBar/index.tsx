@@ -3,13 +3,13 @@ import styles from "./sidebar.module.scss";
 
 const SideBar = () => {
   const navItems = [
-    { name: "Investors", path: "/investors", icon: "src/assets/email.svg" },
+    { name: "Investors", path: "/investors", icon: "src/assets/investment.svg" },
     {
       name: "Emails Sense",
       path: "/emails-sense",
       icon: "src/assets/email.svg",
     },
-    { name: "Competitors", path: "/competitors", icon: "src/assets/email.svg" },
+    { name: "Competitors", path: "/competitors", icon: "src/assets/competitor.svg" },
   ];
 
   return (

@@ -172,7 +172,7 @@ const EmailTable = () => {
       </h2>
 
       {loading && (
-        <Spin tip="Loading..." style={{ marginTop: 50, display: "block", textAlign: "center" }} />
+        <Spin tip="Loading email insights..." style={{ marginTop: 50, display: "block", textAlign: "center" }} />
       )}
 
       {!loading && (

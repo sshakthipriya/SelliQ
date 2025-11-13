@@ -9,6 +9,8 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import "./index.scss";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 
 import axios from "axios";
 
