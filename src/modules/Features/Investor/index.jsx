@@ -126,7 +126,7 @@ const Investor = () => {
   }
   const sorted = [...investors].sort((a, b) => b.score - a.score);
   const top3 = sorted.slice(0, 3);
-  const rest = sorted.slice(3);
+  const rest = sorted.slice(3,5);
 
   return (
     <div className="Investor">
@@ -141,14 +141,14 @@ const Investor = () => {
           <div className="top-cards">
             {top3.map((item) => (
               <div
-                key={item.id}
+                key={item?.id}
                 className={`investor-card ${
-                  selectedInvestor?.id === item.id ? "active" : ""
+                  selectedInvestor?.id === item?.id ? "active" : ""
                 }`}
                 onClick={() => setSelectedInvestor(item)}
               >
-                <h4>{item.name}</h4>
-                <p>{(item.score * 100).toFixed(0)}% match</p>
+                <h4>{item?.name}</h4>
+                <p>{(item?.score * 100).toFixed(0)}% match</p>
               </div>
             ))}
           </div>
@@ -159,13 +159,13 @@ const Investor = () => {
               <div
                 key={item.id}
                 className={`h-card ${
-                  selectedInvestor?.id === item.id ? "active" : ""
+                  selectedInvestor?.id === item?.id ? "active" : ""
                 }`}
                 onClick={() => setSelectedInvestor(item)}
               >
                 <div>
-                  <h5>{item.name}</h5>
-                  <p>{(item.score * 100).toFixed(0)}%</p>
+                  <h5>{item?.name}</h5>
+                  <p>{(item?.score * 100).toFixed(0)}%</p>
                 </div>
               </div>
             ))}
@@ -185,24 +185,24 @@ const Investor = () => {
                 </button>
                 <h3>{selectedInvestor.name}</h3>
                 <p>
-                  <strong>Description:</strong> {selectedInvestor.description}
+                  <strong>Description:</strong> {selectedInvestor?.description ?? `We have invested in ${selectedInvestor?.domain}`}
                 </p>
                 <p>
-                  <strong>Reason:</strong> {selectedInvestor.reason}
+                  <strong>Reason:</strong> {selectedInvestor?.reason}
                 </p>
                 <p>
                   <strong>Fund Stages:</strong>{" "}
-                  {selectedInvestor.fund_stages.join(", ")}
+                  {selectedInvestor?.fund_stages.join(", ")}
                 </p>
                 <p>
                   <strong>LinkedIn:</strong>{" "}
-                  {selectedInvestor.linkedIn ? (
+                  {selectedInvestor?.linkedIn ? (
                     <a
-                      href={selectedInvestor.linkedIn}
+                      href={selectedInvestor?.linkedIn}
                       target="_blank"
                       rel="noreferrer"
                     >
-                      {selectedInvestor.linkedIn}
+                      {selectedInvestor?.linkedIn}
                     </a>
                   ) : (
                     "Not available"
@@ -210,7 +210,7 @@ const Investor = () => {
                 </p>
                 <p>
                   <strong>Target Locations:</strong>{" "}
-                  {selectedInvestor.targetCountries.join(", ")}
+                  {selectedInvestor?.targetCountries.join(", ")}
                 </p>
               </div>
             </div>
