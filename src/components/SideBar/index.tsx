@@ -17,8 +17,8 @@ const SideBar = () => {
       <div className={styles.logo}>
         <img
           src="src/assets/selliq-logo.png"
-          height={180}
-          width={180}
+          height={170}
+          width={170}
           alt="logo"
         />
       </div>
@@ -42,8 +42,7 @@ const SideBar = () => {
       </nav>
 
       <div className={styles.help}>
-        <div>Help</div>
-        <img src="src/assets/email.svg" alt="help" />
+        <div>Revolte</div>
       </div>
     </aside>
   );
