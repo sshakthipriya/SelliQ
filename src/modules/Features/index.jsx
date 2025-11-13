@@ -9,13 +9,13 @@ const Features = () => {
     <div className="features">
       <h1>Features Offered</h1>
       <Tabs defaultActiveKey="1" type="line">
-        <Tabs.TabPane tab="Matched" key="1">
+        <Tabs.TabPane tab="Investor Suggestion" key="1">
           <Investor/>
         </Tabs.TabPane>
-        <Tabs.TabPane tab="Conversight" key="2">
+        <Tabs.TabPane tab="Email Insights Tracker" key="2">
           <p>Get deep insights for your emails.</p>
         </Tabs.TabPane>
-          <Tabs.TabPane tab="Mismatched" key="3">
+          <Tabs.TabPane tab="Competitor Monitoring" key="3">
           <Monitor/>
         </Tabs.TabPane>
       </Tabs>
