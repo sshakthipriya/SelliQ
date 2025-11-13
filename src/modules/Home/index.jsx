@@ -5,7 +5,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleNavigationToFeatures = () => {
-    navigate("/features");
+    navigate("/investors");
   };
 
   return (
