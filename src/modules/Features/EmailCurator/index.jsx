@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Table, Spin, Tag, Typography, Alert } from "antd";
-import "antd/dist/reset.css";
 import "./index.scss";
 
 const { Text } = Typography;
@@ -167,8 +166,8 @@ const EmailTable = () => {
   ];
 
   return (
-    <div style={{ padding: 20 }} className="tableLayout">
-      <h2 style={{ marginBottom: 20, color: "#ff9f43" }}>
+    <div style={{ padding: 20 , marginLeft: "20rem"}} className="tableLayout">
+      <h2 style={{ marginBottom: 20, color: "#1f2937", fontSize: "28px" }}>
         Turn Conversations into Insights — Track, Score, and Prioritize Your Leads
       </h2>
 
