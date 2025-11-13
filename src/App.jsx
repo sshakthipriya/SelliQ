@@ -1,15 +1,24 @@
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import SideBar from "./components/SideBar";
+import Investors from "./modules/Features/Investor/index";
 import "./App.css";
-import Home from "./modules/Home";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Features from "./modules/Features";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
-     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/features" element={<Features />} />
-      </Routes>
+    <Router>
+      <NavBar />
+      <div style={{ display: "flex" }}>
+        <SideBar />
+        <main style={{ flex: 1, padding: "1rem" }}>
+          <Routes>
+            <Route path="/" element={<Navigate to="/investors" />} />
+            <Route path="/investors" element={<Investors />} />
+            {/* <Route path="/emails-sense" element={<EmailsSense />} /> */}
+            {/* <Route path="/competitors" element={<Competitors />} /> */}
+          </Routes>
+        </main>
+      </div>
     </Router>
   );
 }
