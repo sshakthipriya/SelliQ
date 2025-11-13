@@ -2,6 +2,7 @@ import "./index.scss";
 import { Tabs } from "antd";
 import "antd/dist/reset.css";
 import Investor from "./Investor";
+import Monitor from "./Monitor";
 
 const Features = () => {
   return (
@@ -12,7 +13,7 @@ const Features = () => {
           <Investor/>
         </Tabs.TabPane>
         <Tabs.TabPane tab="Feature2" key="2">
-          <p>Get deep insights into your sales performance with real-time analytics.</p>
+          <Monitor/>
         </Tabs.TabPane>
           <Tabs.TabPane tab="Feature3" key="3">
           <p>Get deep insights into your sales performance with real-time analytics.</p>

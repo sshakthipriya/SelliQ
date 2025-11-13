@@ -4,8 +4,13 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  font-family: "Reddit Sans", sans-serif;
+  h2 {
+     color: #006666;
+     font-size: 36px;
+  }
   .chart {
-    width: 70%;
-    height: 500px;
+    width: 60%;
+    height: 450px;
   }
 }
