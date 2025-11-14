@@ -9,78 +9,296 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import "./index.scss";
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-
 
 import axios from "axios";
 
-const data = [
-  {
-    id: 1,
-    name: "Investor A",
-    domain: "devops",
-    description: "Investor A invested in vercel",
-    location: "US",
-    targetCountries: ["US", "India"],
-    linkedIn: "https://linkedin.com/in/investorA",
-    website: "https://investora.com",
-    score: 0.7,
-    reason: "Strong portfolio alignment",
-    fund_stages: ["Seed", "Series A"],
-  },
-  {
-    id: 2,
-    domain: "devops",
-    name: "Investor B",
-    description: "Investor B invested in Stacktape",
-    location: "US",
-    targetCountries: ["US", "India"],
-    linkedIn: "https://linkedin.com/in/investorB",
-    website: "",
-    score: 0.5,
-    reason: "Interested in AI startups",
-    fund_stages: ["Series A", "Series B"],
-  },
-  {
-    id: 3,
-    domain: "devops",
-    name: "Investor C",
-    description: "Investor C invested in Stacktape",
-    location: "US",
-    targetCountries: ["US", "India"],
-    linkedIn: "https://linkedin.com/in/investorC",
-    website: "",
-    score: 0.9,
-    reason: "Looking for early-stage investment",
-    fund_stages: ["Pre-seed", "Seed"],
-  },
-  {
-    id: 4,
-    domain: "devops",
-    name: "Investor D",
-    description: "Investor D invested in Stacktape",
-    location: "US",
-    targetCountries: ["US", "India"],
-    linkedIn: "",
-    website: "",
-    score: 0.3,
-    reason: "Focuses on other sectors",
-    fund_stages: ["Series C"],
-  },
-  {
-    id: 5,
-    domain: "devops",
-    location: "US",
-    targetCountries: ["US", "India"],
-    name: "Investor E",
-    description: "Investor E invested in Stacktape",
-    linkedIn: "",
-    website: "",
-    score: 0.3,
-    reason: "Focuses on other sectors",
-    fund_stages: ["Seed"],
-  },
-];
+const data = {
+  investors: [
+    {
+      name: "Critical Ventures",
+      domain: "DevOps",
+      location: "Parque Industrial Do Taveiro, Lt. 48, Taveiro, Coimbra",
+      description:
+        "Critical Ventures is a VC that invests Worldwide in game-changing software companies with the power to transform the way the world uses technology in the areas of IoT, Automatisation and Digitalisation, Cyber Security, AI/ML / Decentralised Tech, UxD / Interfaces, Mobility and Medical Software.",
+      target_countries: [
+        "Afghanistan",
+        "Albania",
+        "Algeria",
+        "Andorra",
+        "Angola",
+        "Antigua and Barbuda",
+        "Argentina",
+        "Armenia",
+        "Australia",
+        "Austria",
+        "Azerbaijan",
+        "Bahamas",
+        "Bahrain",
+        "Bangladesh",
+        "Barbados",
+        "Belarus",
+        "Belgium",
+        "Belize",
+        "Benin",
+        "Bhutan",
+        "Bolivia",
+        "Bosnia-H",
+        "Botswana",
+        "Brazil",
+        "Brunei",
+        "Bulgaria",
+        "Burkina Faso",
+        "Burundi",
+        "Cabo Verde",
+        "Cambodia",
+        "Cameroon",
+        "Canada",
+        "Central African Republic",
+        "Chad",
+        "Chile",
+        "China",
+        "Colombia",
+        "Comoros",
+        "Congo (Congo-Brazzaville)",
+        "Costa Rica",
+        "Côte d'Ivoire",
+        "Croatia",
+        "Cuba",
+        "Cyprus",
+        "Czech Republic",
+        "DRC Congo",
+        "Denmark",
+        "Djibouti",
+        "Dominica",
+        "Dominican Republic",
+        "Ecuador",
+        "Egypt",
+        "El Salvador",
+        "Equatorial Guinea",
+        "Eritrea",
+        "Estonia",
+        'Eswatini (fmr. "Swaziland")',
+        "Ethiopia",
+        "Fiji",
+        "Finland",
+        "France",
+        "Gabon",
+        "Gambia",
+        "Georgia",
+        "Germany",
+        "Ghana",
+        "Greece",
+        "Grenada",
+        "Guatemala",
+        "Guinea",
+        "Guinea-Bissau",
+        "Guyana",
+        "Haiti",
+        "Holy See",
+        "Honduras",
+        "Hong Kong",
+        "Hungary",
+        "Iceland",
+        "India",
+        "Indonesia",
+        "Iran",
+        "Iraq",
+        "Ireland",
+        "Israel",
+        "Italy",
+        "Jamaica",
+        "Japan",
+        "Jordan",
+        "Kazakhstan",
+        "Kenya",
+        "Kiribati",
+        "Kuwait",
+        "Kyrgyzstan",
+        "Laos",
+        "Latvia",
+        "Lebanon",
+        "Lesotho",
+        "Liberia",
+        "Liechtenstein",
+        "Lithuania",
+        "Luxembourg",
+        "Lybia",
+        "Madagascar",
+        "Malawi",
+        "Malaysia",
+        "Maldives",
+        "Mali",
+        "Malta",
+        "Marshall Islands",
+        "Mauritania",
+        "Mauritius",
+        "Mexico",
+        "Micronesia",
+        "Moldova",
+        "Monaco",
+        "Mongolia",
+        "Montenegro",
+        "Morocco",
+        "Mozambique",
+        "Myanmar",
+        "Namibia",
+        "Nauru",
+        "Nepal",
+        "Netherlands",
+        "New Zealand",
+        "Nicaragua",
+        "Niger",
+        "Nigeria",
+        "North Korea",
+        "North Macedonia",
+        "Norway",
+        "Oman",
+        "Pakistan",
+        "Palau",
+        "Palestine",
+        "Panama",
+        "Papua New Guinea",
+        "Paraguay",
+        "Peru",
+        "Philippines",
+        "Poland",
+        "Portugal",
+        "Qatar",
+        "Romania",
+        "Russia",
+        "Rwanda",
+        "Saint Vincent and the Grenadines",
+        "Samoa",
+        "San Marino",
+        "Sant Kitts and Nevis",
+        "Sant Lucia",
+        "Sao Tome and Principe",
+        "Saudi Arabia",
+        "Senegal",
+        "Serbia",
+        "Seychelles",
+        "Sierra Leone",
+        "Singapore",
+        "Slovakia",
+        "Slovenia",
+        "Solomon Islands",
+        "Somalia",
+        "South Africa",
+        "South Korea",
+        "South Sudan",
+        "Spain",
+        "Sri Lanka",
+        "Sudan",
+        "Suriname",
+        "Sweden",
+        "Switzerland",
+        "Syria",
+        "Taiwan",
+        "Tajikistan",
+        "Tanzania",
+        "Thailand",
+        "Timor-Leste",
+        "Togo",
+        "Tonga",
+        "Trinidad and Tobago",
+        "Tunisia",
+        "Turkey",
+        "Turkmenistan",
+        "Tuvalu",
+        "UAE",
+        "Uganda",
+        "Ukraine",
+        "Uruguay",
+        "USA",
+        "Uzbekistan",
+        "Vanuatu",
+        "Venezuela",
+        "Vietnam",
+        "Yemen",
+        "Zambia",
+        "Zimbabwe",
+      ],
+      stages: ["4. Scaling 3. Early Revenue 2. Prototype 1. Idea Or Patent"],
+      fund_stages: [
+        "4. Scaling",
+        "3. Early Revenue",
+        "2. Prototype",
+        "1. Idea Or Patent",
+      ],
+      linkedin: "https://www.linkedin.com/company/critical-ventures-inc/",
+      website: "https://www.critical-ventures.com/",
+      score: 7,
+      reason:
+        "targets India & Canada (company operates there); supports similar funding stages: early revenue, prototype, scaling; aligned with domain 'DevOps'",
+      id: 1,
+    },
+    {
+      name: "Team8",
+      domain: "DevOps",
+      location: "Totseret ha-Arets St 7, Tel Aviv-Yafo, 6789104",
+      description:
+        "Team8 is a global venture group that builds and invests in companies across cybersecurity, data, AI, enterprise software, fintech, and health-tech. Founded by leaders from Israel’s Unit 8200, we blend deep technical expertise with hands-on company building.",
+      target_countries: ["Israel"],
+      stages: [
+        "I Invest In Native Ai Early Stage Startups And Strong Founders Team In The Ideation Phase.",
+      ],
+      fund_stages: [
+        "1. Idea Or Patent",
+        "2. Prototype",
+        "3. Early Revenue",
+        "4. Scaling",
+      ],
+      linkedin: "https://www.linkedin.com/company/team8group/mycompany/",
+      website: "https://team8.vc/",
+      score: 3.5,
+      reason:
+        "supports similar funding stages: early revenue, prototype, scaling; aligned with domain 'DevOps'",
+      id: 2,
+    },
+    {
+      name: "Eagle Venture Fund",
+      domain: "DevOps",
+      location: "550 Bailey Ave Suite 310 Fort Worth, Texas 76107",
+      description: "We are an impact venture capital fund.",
+      target_countries: [
+        "USA",
+        "Germany",
+        "Switzerland",
+        "Austria",
+        "Singapore",
+      ],
+      stages: ["3. Early Revenue 2. Prototype"],
+      fund_stages: ["3. Early Revenue", "2. Prototype"],
+      linkedin: "https://www.linkedin.com/company/eagle-venture-fund/",
+      website: "https://www.eagleventurefund.com/",
+      score: 3.5,
+      reason:
+        "supports similar funding stages: early revenue, prototype; aligned with domain 'DevOps'",
+      id: 3,
+    },
+    {
+      name: "ENA Venture Capital",
+      domain: "Cloud Computing",
+      location: "Keizersgracht 482, Amsterdam Netherlands",
+      description:
+        "We are passionate about investing in visionary founders who are on a mission to change the world by building the technology stack of the future.",
+      target_countries: ["Netherlands", "Spain", "Turkey", "UAE"],
+      stages: ["3. Early Revenue 2. Prototype 4. Scaling 1. Idea Or Patent"],
+      fund_stages: [
+        "3. Early Revenue",
+        "2. Prototype",
+        "4. Scaling",
+        "1. Idea Or Patent",
+      ],
+      linkedin: "https://www.linkedin.com/company/enavc",
+      website: "https://ena.vc",
+      score: 3.5,
+      reason:
+        "supports similar funding stages: early revenue, prototype, scaling; aligned with domain 'Cloud Computing'",
+      id: 4,
+    },
+  ],
+};
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -107,12 +325,12 @@ const Investor = () => {
     axios
       .get("https://your-api-url.com/investors")
       .then((response) => {
-        setInvestors(response.data);
+        setInvestors(response.data?.investors);
         setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching investors:", error);
-        setInvestors(data);
+        setInvestors(data?.investors);
         setLoading(false);
       });
   }, []);
@@ -126,7 +344,7 @@ const Investor = () => {
   }
   const sorted = [...investors].sort((a, b) => b.score - a.score);
   const top3 = sorted.slice(0, 3);
-  const rest = sorted.slice(3,5);
+  const rest = sorted.slice(3, 5);
 
   return (
     <div className="Investor">
@@ -185,7 +403,9 @@ const Investor = () => {
                 </button>
                 <h3>{selectedInvestor.name}</h3>
                 <p>
-                  <strong>Description:</strong> {selectedInvestor?.description ?? `We have invested in ${selectedInvestor?.domain}`}
+                  <strong>Description:</strong>{" "}
+                  {selectedInvestor?.description ??
+                    `We have invested in ${selectedInvestor?.domain}`}
                 </p>
                 <p>
                   <strong>Reason:</strong> {selectedInvestor?.reason}
@@ -196,13 +416,27 @@ const Investor = () => {
                 </p>
                 <p>
                   <strong>LinkedIn:</strong>{" "}
-                  {selectedInvestor?.linkedIn ? (
+                  {selectedInvestor?.linkedin ? (
                     <a
-                      href={selectedInvestor?.linkedIn}
+                      href={selectedInvestor?.linkedin}
                       target="_blank"
                       rel="noreferrer"
                     >
-                      {selectedInvestor?.linkedIn}
+                      {selectedInvestor?.linkedin?.slice(0,40)}...
+                    </a>
+                  ) : (
+                    "Not available"
+                  )}
+                </p>
+                <p>
+                  <strong>Website:</strong>{" "}
+                  {selectedInvestor?.website ? (
+                    <a
+                      href={selectedInvestor?.website}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {selectedInvestor?.website?.slice(0,40)}...
                     </a>
                   ) : (
                     "Not available"
@@ -210,7 +444,7 @@ const Investor = () => {
                 </p>
                 <p>
                   <strong>Target Locations:</strong>{" "}
-                  {selectedInvestor?.targetCountries.join(", ")}
+                  {selectedInvestor?.target_countries?.join(", ")}
                 </p>
               </div>
             </div>
