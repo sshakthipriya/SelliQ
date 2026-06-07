@@ -1,16 +1,81 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SelliQ is a sales intelligence dashboard that surfaces AI-powered insights across three domains:
 
-Currently, two official plugins are available:
+- **Competitor Intelligence** — track competitor website changes, LinkedIn activity, and positioning shifts in real time
+- **Email Insights** — surface churn risks, upsell signals, and outreach opportunities from connected inboxes
+- **Investor Discovery** — find and prioritize high-fit investors based on market relevance and portfolio alignment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Tech Stack - This repo is a Frontend repo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Technology | Role |
+|---|---|
+| React 19 | UI framework |
+| Vite 7 | Build tool and dev server |
+| Ant Design 5 | Component library |
+| Recharts | Charts and data visualization |
+| React Router DOM 7 | Client-side routing |
+| Axios | API communication |
+| SCSS / Sass | Component styling |
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+### Prerequisites
+
+- Node.js >= 18
+- npm >= 9
+
+### Installation
+
+```bash
+git clone https://github.com/sshakthipriya/SelliQ.git
+cd SelliQ
+npm install
+npm run dev
+```
+
+The app runs at `http://localhost:5173` by default.
+
+### Environment Variables
+
+Create a `.env` file in the root:
+
+```env
+VITE_API_BASE_URL=http://localhost:3000
+VITE_GOOGLE_CLIENT_ID=your_google_client_id
+```
+
+### Scripts
+
+```bash
+npm run dev       # Start dev server with HMR
+npm run build     # Production build
+npm run preview   # Preview production build locally
+npm run lint      # Run ESLint
+```
+
+---
+
+## Project Structure
+
+```
+src/
+├── assets/          # Static assets (images, icons)
+├── components/      # Reusable UI components
+├── pages/           # Route-level page components
+├── services/        # Axios API calls
+├── hooks/           # Custom React hooks
+├── utils/           # Helper functions
+└── App.jsx          # Root component and routing
+```
+
+---
+
+## Demo
+
+📽️ [Watch the full demo on Google Drive](https://drive.google.com/file/d/18KQECnT1jAtjx_TXquSi6fSI5ZZ9AH_5/view?usp=sharing)
+
+---
